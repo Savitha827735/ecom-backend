@@ -6,7 +6,7 @@ const {User}= require('./model/User');
 const mongoose = require('mongoose');
 const cors=require('cors');
 const morgan =require('morgan');
-const bcrypt=require('bcrypt');
+const bcrypt=require('bcryptjs');
 const jwt=require('jsonwebtoken');
 const {Product}=require('./model/Product');
 const {Cart}=require ('./model/Cart');
@@ -16,8 +16,10 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan('dev'));
 
+//4S6AFGYjs865S1AA
 
-mongoose.connect('mongodb://127.0.0.1:27017/KleProject')
+let MONGOBB_URL="mongodb+srv://savitha:4S6AFGYjs865S1AA@cluster0.ebf9x.mongodb.net/?retryWrites=true&w=majority"
+mongoose.connect(MONGOBB_URL)
 .then(()=>{
     console.log("Db is connected")
 }).catch((err)=>{
