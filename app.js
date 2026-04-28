@@ -382,6 +382,9 @@ app.post("/cart/add", async (req, res) => {
         .json({ message: "Error Removing Product from Cart", error });
     }
   });
+
+app.get('/',(req,res)=>{
+    res.send('Backend running');});
   
 
 
