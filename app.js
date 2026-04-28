@@ -18,7 +18,7 @@ app.use(morgan('dev'));
 
 //4S6AFGYjs865S1AA
 
-let MONGOBB_URL="mongodb+srv://savitha:4S6AFGYjs865S1AA@cluster0.ebf9x.mongodb.net/?retryWrites=true&w=majority"
+let MONGOBB_URL=process.env.MONGODB_URL
 mongoose.connect(MONGOBB_URL)
 .then(()=>{
     console.log("Db is connected")
